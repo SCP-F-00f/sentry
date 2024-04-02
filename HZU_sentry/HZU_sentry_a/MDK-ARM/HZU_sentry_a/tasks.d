@@ -1,9 +1,9 @@
 hzu_sentry_a\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/tasks.c
-hzu_sentry_a\tasks.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-hzu_sentry_a\tasks.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+hzu_sentry_a\tasks.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stdlib.h
+hzu_sentry_a\tasks.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\string.h
 hzu_sentry_a\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-hzu_sentry_a\tasks.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-hzu_sentry_a\tasks.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+hzu_sentry_a\tasks.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stddef.h
+hzu_sentry_a\tasks.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stdint.h
 hzu_sentry_a\tasks.o: ../Core/Inc/FreeRTOSConfig.h
 hzu_sentry_a\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 hzu_sentry_a\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
@@ -14,4 +14,4 @@ hzu_sentry_a\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 hzu_sentry_a\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 hzu_sentry_a\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 hzu_sentry_a\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/stack_macros.h
-hzu_sentry_a\tasks.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+hzu_sentry_a\tasks.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stdio.h

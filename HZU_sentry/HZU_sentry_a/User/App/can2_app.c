@@ -130,10 +130,10 @@ void can2_message_progress(CAN_RxHeaderTypeDef *pHeader, uint8_t aData[])
 }
 
 
-extern ext_game_robot_status_t robot_status;
-extern ext_power_heat_data_t power_heat;
-extern ext_shoot_data_t shoot_data; 
-extern ext_robot_hurt_t robot_hurt;
+extern robot_status_t robot_status;
+extern power_heat_data_t power_heat;
+extern shoot_data_t shoot_data; 
+extern hurt_data_t robot_hurt;
 
 void send_shoot_17mm_data(void)  
 {
@@ -142,14 +142,14 @@ void send_shoot_17mm_data(void)
     can2_tx_header.RTR = CAN_RTR_DATA;
     can2_tx_header.DLC = 0x08;
 
-    can2_tx_data[0] = (uint8_t)(robot_status.shooter_id1_17mm_cooling_rate>>8);
-    can2_tx_data[1] = (uint8_t)(robot_status.shooter_id1_17mm_cooling_rate);
-    can2_tx_data[2] = (uint8_t)(robot_status.shooter_id1_17mm_cooling_limit>>8);
-    can2_tx_data[3] = (uint8_t)(robot_status.shooter_id1_17mm_cooling_limit);
-	can2_tx_data[4] = (uint8_t)(robot_status.shooter_id1_17mm_speed_limit>>8);
-    can2_tx_data[5] = (uint8_t)(robot_status.shooter_id1_17mm_speed_limit);
-    can2_tx_data[6] = (uint8_t)(power_heat.shooter_id1_17mm_cooling_heat>>8);
-    can2_tx_data[7] = (uint8_t)(power_heat.shooter_id1_17mm_cooling_heat);
+    can2_tx_data[0] = (uint8_t)(robot_status.shooter_barrel_cooling_value>>8);
+    can2_tx_data[1] = (uint8_t)(robot_status.shooter_barrel_cooling_value);
+    can2_tx_data[2] = (uint8_t)(robot_status.shooter_barrel_heat_limit>>8);
+    can2_tx_data[3] = (uint8_t)(robot_status.shooter_barrel_heat_limit);
+	can2_tx_data[4] = (uint8_t)(30>>8);
+    can2_tx_data[5] = (uint8_t)(30);
+    can2_tx_data[6] = (uint8_t)(power_heat.shooter_17mm_1_barrel_heat>>8);
+    can2_tx_data[7] = (uint8_t)(power_heat.shooter_17mm_1_barrel_heat);
 	HAL_CAN_AddTxMessage(&hcan2, &can2_tx_header, can2_tx_data, (uint32_t *) CAN_TX_MAILBOX0);
 }
 void send_shoot_judge_data(void)  
@@ -159,10 +159,10 @@ void send_shoot_judge_data(void)
     can2_tx_header.RTR = CAN_RTR_DATA;
     can2_tx_header.DLC = 0x08;
 
-    can2_tx_data[0] = (uint8_t)(((uint16_t)(shoot_data.bullet_speed*100))>>8);     //保留两位小数
-    can2_tx_data[1] = (uint8_t)((uint16_t)(shoot_data.bullet_speed*100));
-    can2_tx_data[2] = (uint8_t)(robot_hurt.hurt_type);
-    can2_tx_data[3] = (uint8_t)(robot_status.mains_power_shooter_output);
+    can2_tx_data[0] = (uint8_t)(((uint16_t)(shoot_data.initial_speed*100))>>8);     //保留两位小数
+    can2_tx_data[1] = (uint8_t)((uint16_t)(shoot_data.initial_speed*100));
+    can2_tx_data[2] = (uint8_t)(robot_hurt.HP_deduction_reason);
+    can2_tx_data[3] = (uint8_t)(robot_status.power_management_shooter_output);
 		can2_tx_data[4] = (uint8_t)(robot_status.robot_id);
     can2_tx_data[5] = 0;
     can2_tx_data[6] = 0;

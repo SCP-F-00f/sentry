@@ -1,7 +1,7 @@
 hzu_sentry_a\freertos.o: ../Core/Src/freertos.c
 hzu_sentry_a\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-hzu_sentry_a\freertos.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-hzu_sentry_a\freertos.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+hzu_sentry_a\freertos.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stddef.h
+hzu_sentry_a\freertos.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stdint.h
 hzu_sentry_a\freertos.o: ../Core/Inc/FreeRTOSConfig.h
 hzu_sentry_a\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 hzu_sentry_a\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
@@ -44,8 +44,8 @@ hzu_sentry_a\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
 hzu_sentry_a\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 hzu_sentry_a\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 hzu_sentry_a\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-hzu_sentry_a\freertos.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-hzu_sentry_a\freertos.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+hzu_sentry_a\freertos.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\string.h
+hzu_sentry_a\freertos.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\math.h
 hzu_sentry_a\freertos.o: ../Drivers/System/delay.h
 hzu_sentry_a\freertos.o: ../Drivers/System/sys.h
 hzu_sentry_a\freertos.o: ../Core/Inc/struct_typedef.h

@@ -22,9 +22,9 @@ typedef struct
 }robot_t;
 
 
-extern ext_game_robot_status_t robot_status;
-extern ext_power_heat_data_t power_heat;
-extern ext_robot_hurt_t robot_hurt; 
+extern robot_status_t robot_status;
+extern power_heat_data_t power_heat;
+extern hurt_data_t robot_hurt; 
 
 
 void robot_hurt_analysis(void);

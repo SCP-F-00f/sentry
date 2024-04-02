@@ -4,7 +4,7 @@ hzu_sentry_a\can2_app.o: ../Drivers/System/sys.h
 hzu_sentry_a\can2_app.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 hzu_sentry_a\can2_app.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h
 hzu_sentry_a\can2_app.o: ../Drivers/CMSIS/Include/core_cm4.h
-hzu_sentry_a\can2_app.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+hzu_sentry_a\can2_app.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stdint.h
 hzu_sentry_a\can2_app.o: ../Drivers/CMSIS/Include/cmsis_version.h
 hzu_sentry_a\can2_app.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 hzu_sentry_a\can2_app.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -16,7 +16,7 @@ hzu_sentry_a\can2_app.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
 hzu_sentry_a\can2_app.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 hzu_sentry_a\can2_app.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 hzu_sentry_a\can2_app.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-hzu_sentry_a\can2_app.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+hzu_sentry_a\can2_app.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stddef.h
 hzu_sentry_a\can2_app.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 hzu_sentry_a\can2_app.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 hzu_sentry_a\can2_app.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -50,8 +50,8 @@ hzu_sentry_a\can2_app.o: ../Core/Inc/struct_typedef.h
 hzu_sentry_a\can2_app.o: ../User/App/can1_app.h
 hzu_sentry_a\can2_app.o: ../Components/controller/pid.h
 hzu_sentry_a\can2_app.o: ../Core/Inc/main.h
-hzu_sentry_a\can2_app.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-hzu_sentry_a\can2_app.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+hzu_sentry_a\can2_app.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\string.h
+hzu_sentry_a\can2_app.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\math.h
 hzu_sentry_a\can2_app.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h
 hzu_sentry_a\can2_app.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
 hzu_sentry_a\can2_app.o: ../Core/Inc/can.h
@@ -66,9 +66,9 @@ hzu_sentry_a\can2_app.o: ..\User\App\judge.h
 hzu_sentry_a\can2_app.o: ../User/Task/ins_task.h
 hzu_sentry_a\can2_app.o: ../IMU/bsp_imu.h
 hzu_sentry_a\can2_app.o: ../IMU/mytype.h
-hzu_sentry_a\can2_app.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
-hzu_sentry_a\can2_app.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
-hzu_sentry_a\can2_app.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+hzu_sentry_a\can2_app.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stdarg.h
+hzu_sentry_a\can2_app.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stdbool.h
+hzu_sentry_a\can2_app.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stdlib.h
 hzu_sentry_a\can2_app.o: ../User/Task/chassis_task.h
 hzu_sentry_a\can2_app.o: ../User/Task/ULTRASONIC_task.h
 hzu_sentry_a\can2_app.o: ../User/App/remote_app.h

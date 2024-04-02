@@ -27,9 +27,9 @@ robot_t Infantry;
  void robot_hurt_analysis(void)
  {
    hurt_init();
-   if(Infantry.Pre_HP > robot_status.remain_HP )          //扣血了
+   if(Infantry.Pre_HP > robot_status.current_HP )          //扣血了
    {
-     switch (robot_hurt.hurt_type)                       //伤害分析
+     switch (robot_hurt.HP_deduction_reason)                       //伤害分析
      {
         case 0x00:Infantry.Armor_Huar_flag = 1;break;
         case 0x01:Infantry.Off_Line_flag = 1;break;
@@ -66,8 +66,8 @@ void chassis_power_limit(void)
   Infantry.allow_power = robot_status.chassis_power_limit;         //先给默认值
   if( power_heat.chassis_power > robot_status.chassis_power_limit && Infantry.Over_Power_flag )
   {
-     Infantry.hurt_HP = Infantry.Pre_HP - robot_status.remain_HP;
-     Infantry.over_power_P = Infantry.hurt_HP/(robot_status.max_HP*0.1);
+     Infantry.hurt_HP = Infantry.Pre_HP - robot_status.current_HP;
+     Infantry.over_power_P = Infantry.hurt_HP/(robot_status.maximum_HP*0.1);
     if (Infantry.over_power_P == 10 )
     {
         Infantry.over_power_part = robot_status.chassis_power_limit *0.1;

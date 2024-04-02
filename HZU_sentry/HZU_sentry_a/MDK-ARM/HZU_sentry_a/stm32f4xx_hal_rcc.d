@@ -6,7 +6,7 @@ hzu_sentry_a\stm32f4xx_hal_rcc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_
 hzu_sentry_a\stm32f4xx_hal_rcc.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 hzu_sentry_a\stm32f4xx_hal_rcc.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h
 hzu_sentry_a\stm32f4xx_hal_rcc.o: ../Drivers/CMSIS/Include/core_cm4.h
-hzu_sentry_a\stm32f4xx_hal_rcc.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+hzu_sentry_a\stm32f4xx_hal_rcc.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stdint.h
 hzu_sentry_a\stm32f4xx_hal_rcc.o: ../Drivers/CMSIS/Include/cmsis_version.h
 hzu_sentry_a\stm32f4xx_hal_rcc.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 hzu_sentry_a\stm32f4xx_hal_rcc.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -14,7 +14,7 @@ hzu_sentry_a\stm32f4xx_hal_rcc.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 hzu_sentry_a\stm32f4xx_hal_rcc.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 hzu_sentry_a\stm32f4xx_hal_rcc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 hzu_sentry_a\stm32f4xx_hal_rcc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-hzu_sentry_a\stm32f4xx_hal_rcc.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+hzu_sentry_a\stm32f4xx_hal_rcc.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stddef.h
 hzu_sentry_a\stm32f4xx_hal_rcc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 hzu_sentry_a\stm32f4xx_hal_rcc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 hzu_sentry_a\stm32f4xx_hal_rcc.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h

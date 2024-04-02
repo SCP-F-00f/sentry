@@ -23,7 +23,7 @@
 
 //#include "chassis_task.h"
 
-extern ext_game_robot_status_t robot_status;
+extern robot_status_t robot_status;
 
 extern float rotate_speed;
 char Usart_Receive[10]={0},Usart_Receive1[10]={0}; 

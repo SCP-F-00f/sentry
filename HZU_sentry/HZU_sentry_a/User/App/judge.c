@@ -22,14 +22,14 @@
 judge_manegement_t judge_manegement;
 extern robot_t Infantry;
 
-ext_game_status_t game_status;              //最后几秒，爆发模式
-ext_referee_warning_t referee_warning;
-ext_game_robot_status_t robot_status;
-ext_power_heat_data_t power_heat;
-ext_buff_t robot_buff;
-ext_robot_hurt_t robot_hurt;                 //辅助检查是否违规
-ext_shoot_data_t shoot_data;               
-ext_bullet_remaining_t bullets_remaining;  
+game_status_t game_status;              //最后几秒，爆发模式
+referee_warning_t referee_warning;
+robot_status_t robot_status;
+power_heat_data_t power_heat;
+buff_t robot_buff;
+hurt_data_t robot_hurt;                 //辅助检查是否违规
+shoot_data_t shoot_data;               
+projectile_allowance_t bullets_remaining;  
 
 //裁判系统官方CRC校验
 //crc8 生成多项式:G(x)=x8+x5+x4+1 
@@ -207,20 +207,20 @@ void process_judge_message(uint8_t *ReadFromUsart)
 				judge_manegement.cmd_id = ReadFromUsart[6]<<8|ReadFromUsart[5];
 				switch(judge_manegement.cmd_id)
 				{        //都别删，回校更新完裁判系统固件，检测后，会再整理     *hyj
+					case ROBOT_HURT_ID:get_robot_hurt(ReadFromUsart,&robot_hurt);robot_hurt_analysis();break;
+					case SHOOT_DATA_ID:get_shoot_infor(ReadFromUsart,&shoot_data);bullets_remaining.projectile_allowance_17mm--;break;
+					case BULLETS_NUMBER_ID:get_bullets_remaining(ReadFromUsart,&bullets_remaining);break;
 					case GAME_STATUS_DATA_ID:get_game_status(ReadFromUsart,&game_status);break;
 					case REFEREE_WARNING_ID:get_referee_warning(ReadFromUsart,&referee_warning);break;
 					case ROBOT_STATE_ID:{
-						if(robot_status.remain_HP !=  (ReadFromUsart[10]<<8|ReadFromUsart[9]))
+						if(robot_status.current_HP !=  (ReadFromUsart[10]<<8|ReadFromUsart[9]))
 						{
-							Infantry.Pre_HP = robot_status.remain_HP;                       //获取前一血量  
+							Infantry.Pre_HP = robot_status.current_HP;                       //获取前一血量  
 						}
 						get_robot_status(ReadFromUsart,&robot_status);}
 						break;	
 					case ROBOT_POWER_HEART_ID:get_power_heart(ReadFromUsart,&power_heat);break;
 					case BUFF_ID:get_robot_buff(ReadFromUsart,&robot_buff);break;
-					case ROBOT_HURT_ID:get_robot_hurt(ReadFromUsart,&robot_hurt);robot_hurt_analysis();break;
-					case SHOOT_DATA_ID:get_shoot_infor(ReadFromUsart,&shoot_data);bullets_remaining.shootnum++;break;
-					case BULLETS_NUMBER_ID:get_bullets_remaining(ReadFromUsart,&bullets_remaining);break;
 					default :break;
 				}
 				if(*(ReadFromUsart + JUDGE_LEN_HEADER + JUDGE_LEN_CMDID + judge_manegement.frame_header.data_length + JUDGE_LEN_TAIL) == 0xA5)
@@ -235,7 +235,7 @@ void process_judge_message(uint8_t *ReadFromUsart)
 }
 
 /**********根据裁判系统通信协议格式———— 从第7位开始为有效数据位*********hyj*******/
-void get_game_status(uint8_t *ReadFromUsart, ext_game_status_t *game_status)   //比赛状态数据
+void get_game_status(uint8_t *ReadFromUsart, game_status_t *game_status)   //比赛状态数据
 {
 	game_status->game_type = ReadFromUsart[7] & 0x0f;
 	game_status->game_progress = (ReadFromUsart[7] & 0xf0) >> 4 ;              //先屏蔽无效位，再移       *hyj
@@ -248,70 +248,68 @@ void get_game_status(uint8_t *ReadFromUsart, ext_game_status_t *game_status)   /
 	game_status->SyncTimeStamp = atoi(SourceDataH);                                        //拼接64位，待测
 
 }
-void get_referee_warning(uint8_t *ReadFromUsart, ext_referee_warning_t *referee_warning)   //裁判警告数据，警告发生后发送
+
+
+void get_referee_warning(uint8_t *ReadFromUsart, referee_warning_t *referee_warning)   //裁判警告数据，警告发生后发送
 {
 	referee_warning->level = ReadFromUsart[7];
-	referee_warning->foul_robot_id = ReadFromUsart[8];
+	referee_warning->offending_robot_id = ReadFromUsart[8];
+	referee_warning->count = ReadFromUsart[9];
 
 }
-void get_robot_status(uint8_t *ReadFromUsart, ext_game_robot_status_t *robot_status)     //获取机器人状态，单一发送
+
+void get_robot_status(uint8_t *ReadFromUsart, robot_status_t *robot_status)     //获取机器人状态，单一发送
 {                                                                      
 	robot_status->robot_id = ReadFromUsart[7];
 	robot_status->robot_level = ReadFromUsart[8];
-	robot_status->remain_HP = ReadFromUsart[10]<<8|ReadFromUsart[9];
-	robot_status->max_HP = ReadFromUsart[12]<<8|ReadFromUsart[11];
-	robot_status->shooter_id1_17mm_cooling_rate = ReadFromUsart[14]<<8|ReadFromUsart[13];
-	robot_status->shooter_id1_17mm_cooling_limit = ReadFromUsart[16]<<8|ReadFromUsart[15];
-	robot_status->shooter_id1_17mm_speed_limit = ReadFromUsart[18] <<8|ReadFromUsart[17];
-	
-	robot_status->shooter_id2_17mm_cooling_rate = ReadFromUsart[20]<<8|ReadFromUsart[19];
-	robot_status->shooter_id2_17mm_cooling_limit = ReadFromUsart[22]<<8|ReadFromUsart[21];
-	robot_status->shooter_id2_17mm_speed_limit = ReadFromUsart[24]<<8|ReadFromUsart[23];
-	
-	robot_status->shooter_id1_42mm_cooling_rate = ReadFromUsart[26]<<8|ReadFromUsart[25];
-	robot_status->shooter_id1_42mm_cooling_limit = ReadFromUsart[28]<<8|ReadFromUsart[27];
-	robot_status->shooter_id1_42mm_speed_limit = ReadFromUsart[30]<<8|ReadFromUsart[29];
-	
-	robot_status->chassis_power_limit = ReadFromUsart[32] <<8|ReadFromUsart[31];
-	robot_status->mains_power_gimbal_output = ReadFromUsart[33] & 0x01 ;             //先屏蔽无效位，再移到想要的位数   *hyj
-	robot_status->mains_power_chassis_output = (ReadFromUsart[33] & 0x02) >>1;
-	robot_status->mains_power_shooter_output = (ReadFromUsart[33] & 0x04) >>2;
+	robot_status->current_HP = ReadFromUsart[10]<<8|ReadFromUsart[9];
+	robot_status->maximum_HP = ReadFromUsart[12]<<8|ReadFromUsart[11];
+	robot_status->shooter_barrel_cooling_value = ReadFromUsart[14]<<8|ReadFromUsart[13];
+	robot_status->shooter_barrel_heat_limit = ReadFromUsart[16]<<8|ReadFromUsart[15];
+	robot_status->chassis_power_limit = ReadFromUsart[18] <<8|ReadFromUsart[17];
+	robot_status->power_management_gimbal_output = ReadFromUsart[19] & 0x01 ;
+	robot_status->power_management_chassis_output = ReadFromUsart[19] & 0x02;
+	robot_status->power_management_shooter_output = ReadFromUsart[19] & 0x04;
 
 }
-void get_power_heart(uint8_t *ReadFromUsart, ext_power_heat_data_t *power_heat)         //实时功率热量数据
+void get_power_heart(uint8_t *ReadFromUsart, power_heat_data_t *power_heat)         //实时功率热量数据
 {
-	power_heat->chassis_volt = ReadFromUsart[8]<<8|ReadFromUsart[7];
+	power_heat->chassis_voltage = ReadFromUsart[8]<<8|ReadFromUsart[7];
 	power_heat->chassis_current = ReadFromUsart[10]<<8|ReadFromUsart[9];
 	int32_t SourceData = ReadFromUsart[14]<<24|ReadFromUsart[13]<<16|ReadFromUsart[12]<<8|ReadFromUsart[11];
 	memcpy((void *)&power_heat->chassis_power, (void *)&SourceData, sizeof(power_heat->chassis_power));
-	power_heat->chassis_power_buffer = ReadFromUsart[16]<<8|ReadFromUsart[15];
-	power_heat->shooter_id1_17mm_cooling_heat = ReadFromUsart[18]<<8|ReadFromUsart[17];
-	power_heat->shooter_id2_17mm_cooling_heat = ReadFromUsart[20]<<8|ReadFromUsart[19];
-	power_heat->shooter_id1_42mm_cooling_heat = ReadFromUsart[22]<<8|ReadFromUsart[21];
+	power_heat->buffer_energy = ReadFromUsart[16]<<8|ReadFromUsart[15];
+	power_heat->shooter_17mm_1_barrel_heat = ReadFromUsart[18]<<8|ReadFromUsart[17];
+	power_heat->shooter_17mm_2_barrel_heat = ReadFromUsart[20]<<8|ReadFromUsart[19];
+	power_heat->shooter_42mm_barrel_heat = ReadFromUsart[22]<<8|ReadFromUsart[21];
 }
-void get_robot_buff(uint8_t *ReadFromUsart, ext_buff_t *robot_buff)   //机器人增益数据，增益状态改变后发送
+void get_robot_buff(uint8_t *ReadFromUsart, buff_t *robot_buff)   //机器人增益数据，增益状态改变后发送
 {
-	robot_buff->power_rune_buff = ReadFromUsart[7] & 0x0f ;
+	robot_buff->recovery_buff = ReadFromUsart[7];
+	robot_buff->cooling_buff = ReadFromUsart[8];
+	robot_buff->defence_buff = ReadFromUsart[9];
+	robot_buff->vulnerability_buff = ReadFromUsart[10];
+	robot_buff->attack_buff = ReadFromUsart[12]<<8 | ReadFromUsart[11];
 }
-void get_robot_hurt(uint8_t *ReadFromUsart, ext_robot_hurt_t *robot_hurt)   //伤害状态数据，伤害发生后发
+void get_robot_hurt(uint8_t *ReadFromUsart, hurt_data_t *hurt_data)   //伤害状态数据，伤害发生后发
 {
-	robot_hurt->armor_id = ReadFromUsart[7] & 0x0f;
-	robot_hurt->hurt_type = (ReadFromUsart[7] & 0xf0) >>4 ;             //只能检测到掉线扣血、装甲打击扣血   后面得重新刷固件      *hyj
+	hurt_data->armor_id = ReadFromUsart[7] & 0x0f;
+	hurt_data->HP_deduction_reason = (ReadFromUsart[7] & 0xf0) >>4 ;             //只能检测到掉线扣血、装甲打击扣血   后面得重新刷固件      *hyj
 	
 }
-void get_shoot_infor(uint8_t *ReadFromUsart, ext_shoot_data_t *shoot_data)              //实时射击信息 
+void get_shoot_infor(uint8_t *ReadFromUsart, shoot_data_t *shoot_data)              //实时射击信息 
 {
 	shoot_data->bullet_type = ReadFromUsart[7];
-	shoot_data->shooter_id = ReadFromUsart[8];
-	shoot_data->bullet_freq = ReadFromUsart[9];
+	shoot_data->shooter_number = ReadFromUsart[8];
+	shoot_data->launching_frequency = ReadFromUsart[9];
 	int32_t SourceData = ReadFromUsart[13]<<24 | ReadFromUsart[12]<<16 | ReadFromUsart[11]<<8 | ReadFromUsart[10];
-	memcpy((void *)&shoot_data->bullet_speed, (void *)&SourceData, sizeof(shoot_data->bullet_speed));
+	memcpy((void *)&shoot_data->initial_speed, (void *)&SourceData, sizeof(shoot_data->initial_speed));
 }
-void get_bullets_remaining(uint8_t *ReadFromUsart, ext_bullet_remaining_t *bullets_remaining)   //子弹剩余发射数目
+void get_bullets_remaining(uint8_t *ReadFromUsart, projectile_allowance_t *bullets_remaining)   //子弹剩余发射数目
 {
-	bullets_remaining->bullet_remaining_num_17mm = ReadFromUsart[8]<<8|ReadFromUsart[7];
-	bullets_remaining->bullet_remaining_num_42mm = ReadFromUsart[10]<<8|ReadFromUsart[9];
-	bullets_remaining->coin_remaining_num = ReadFromUsart[12]<<8|ReadFromUsart[11];
+	bullets_remaining->projectile_allowance_17mm = ReadFromUsart[8]<<8|ReadFromUsart[7];
+	bullets_remaining->projectile_allowance_42mm = ReadFromUsart[10]<<8|ReadFromUsart[9];
+	bullets_remaining->remaining_gold_coin = ReadFromUsart[12]<<8|ReadFromUsart[11];
 }
 
 

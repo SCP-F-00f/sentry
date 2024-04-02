@@ -8,7 +8,7 @@ hzu_sentry_a\bsp_imu.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h
 hzu_sentry_a\bsp_imu.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
 hzu_sentry_a\bsp_imu.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h
 hzu_sentry_a\bsp_imu.o: ../Drivers/CMSIS/Include/core_cm4.h
-hzu_sentry_a\bsp_imu.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+hzu_sentry_a\bsp_imu.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stdint.h
 hzu_sentry_a\bsp_imu.o: ../Drivers/CMSIS/Include/cmsis_version.h
 hzu_sentry_a\bsp_imu.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 hzu_sentry_a\bsp_imu.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
@@ -16,7 +16,7 @@ hzu_sentry_a\bsp_imu.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 hzu_sentry_a\bsp_imu.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 hzu_sentry_a\bsp_imu.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 hzu_sentry_a\bsp_imu.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-hzu_sentry_a\bsp_imu.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+hzu_sentry_a\bsp_imu.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stddef.h
 hzu_sentry_a\bsp_imu.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 hzu_sentry_a\bsp_imu.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 hzu_sentry_a\bsp_imu.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h
@@ -36,12 +36,12 @@ hzu_sentry_a\bsp_imu.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
 hzu_sentry_a\bsp_imu.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 hzu_sentry_a\bsp_imu.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 hzu_sentry_a\bsp_imu.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
-hzu_sentry_a\bsp_imu.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
-hzu_sentry_a\bsp_imu.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
-hzu_sentry_a\bsp_imu.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-hzu_sentry_a\bsp_imu.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+hzu_sentry_a\bsp_imu.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stdarg.h
+hzu_sentry_a\bsp_imu.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stdbool.h
+hzu_sentry_a\bsp_imu.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stdlib.h
+hzu_sentry_a\bsp_imu.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\string.h
 hzu_sentry_a\bsp_imu.o: ..\IMU\ist8310_reg.h
-hzu_sentry_a\bsp_imu.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+hzu_sentry_a\bsp_imu.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\math.h
 hzu_sentry_a\bsp_imu.o: ..\IMU\mpu6500_reg.h
 hzu_sentry_a\bsp_imu.o: ../Core/Inc/spi.h
 hzu_sentry_a\bsp_imu.o: ../Core/Inc/main.h

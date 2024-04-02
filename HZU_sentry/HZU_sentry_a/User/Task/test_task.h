@@ -61,27 +61,27 @@ typedef  struct
 
 */
 
-typedef  struct
-{
-	uint8_t graphic_name[3];     //图形名（在删除，修改等操作中，作为客户端的索引）    
-	//图像配置  （协议上有可参考）
-	uint32_t operate_tpye:3;     //图形操作
-	uint32_t graphic_tpye:3;     //图形类型
-	uint32_t layer:4;            //图层数
-	uint32_t color:4;            //颜色
-    
-	uint32_t start_angle:9;      //起始角度
-	uint32_t end_angle:9;        //终止角度
+//typedef  struct
+//{
+//	uint8_t graphic_name[3];     //图形名（在删除，修改等操作中，作为客户端的索引）    
+//	//图像配置  （协议上有可参考）
+//	uint32_t operate_tpye:3;     //图形操作
+//	uint32_t graphic_tpye:3;     //图形类型
+//	uint32_t layer:4;            //图层数
+//	uint32_t color:4;            //颜色
+//    
+//	uint32_t start_angle:9;      //起始角度
+//	uint32_t end_angle:9;        //终止角度
 
-	uint32_t width:10;           //线宽
-	uint32_t start_x:11;         //起点x坐标
-	uint32_t start_y:11;         //起点y坐标
+//	uint32_t width:10;           //线宽
+//	uint32_t start_x:11;         //起点x坐标
+//	uint32_t start_y:11;         //起点y坐标
 
-	uint32_t radius:10;          //字体大小或者半径
-	uint32_t end_x:11;           //终点x坐标
-	uint32_t end_y:11;           //终点y坐标
+//	uint32_t radius:10;          //字体大小或者半径
+//	uint32_t end_x:11;           //终点x坐标
+//	uint32_t end_y:11;           //终点y坐标
 
-}graphic_data_struct_t; //图形数据
+//}graphic_data_struct_t; //图形数据
 
 typedef struct
 {
@@ -90,16 +90,16 @@ typedef struct
 }ext_client_custom_graphic_single_t;
 
 
-// typedef  struct 
-// { 
-// 	float data1; 
-// 	float data2; 
-// 	float data3; 
-// 	uint8_t data4; 
-// } client_custom_data_t;
-
+typedef struct
+{
+	uint8_t SOF; 	//数据帧起始字节，固定值为 0xA5
+	uint16_t data_length;
+	uint8_t seq;	//包序号
+	uint8_t CRC8;	//帧头 CRC8 校验
+} frame_header_t;
 //帧头  命令码   数据段头结构  数据段   帧尾
 //上传客户端
+
 typedef  struct
 {
 	frame_header_t   						txFrameHeader;  //帧头

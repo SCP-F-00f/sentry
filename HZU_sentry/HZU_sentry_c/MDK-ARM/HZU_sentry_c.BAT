@@ -1,0 +1,14 @@
+SET PATH=D:\mdk536\ARM\ARMCC\Bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\libnvvp;C:\Program Files\MySQL\mysql\bin;C:\Program Files\MySQL\mysql\bin;C:\Program Files\MySQL\mysql\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Microsoft MPI\Bin\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;D:\opencv\build\x64\vc15\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files (x86)\STMicroelectronics\STM32 ST-LINK Utility\ST-LINK Utility;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\Azure Data Studio\bin;C:\Program Files\Java\jdk1.8.0_341\bin;C:\Program Files\Java\jdk1.8.0_341\jre\bin;D:\minGW64\bin;D:\gcc-arm-none-eabi\bin;D:\mingw64\bin;D:\cmake-3.24.3\bin;D:\OpenOCD\bin;C:\Users\lochaoxive\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\lochaoxive\AppData\Local\Programs\Python\Python37\;C:\Users\lochaoxive\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm;D:\MATLABR2022b\runtime\win64;D:\MATLABR2022b\bin;D:\serialplot\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1\libnvvp;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\lib\x64;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\bin;C:\ProgramData\NVIDIA Corporation\CUDA Samples\v10.0\common\lib\x64;C:\ProgramData\NVIDIA Corporation\CUDA Samples\v10.0\common\lib\x64;C:\ProgramData\NVIDIA Corporation\CUDA Samples\v10.0\bin\win64;C:\Users\lochaoxive\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\lochaoxive\AppData\Local\Programs\Python\Python37\;C:\Users\lochaoxive\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm Community Edition 2021.2.3\bin;;D:\ffmpeg\bin;C:\Program Files (x86)\Tencent\QQGameTempest\Hall.57734\;C:\Program Files\Azure Data Studio\bin;D:\CLion 2020.3.4\bin;;D:\Microsoft VS Code\bin
+SET CPU_TYPE=STM32F407IGHx
+SET CPU_VENDOR=STMicroelectronics
+SET UV2_TARGET=HZU_sentry_c
+SET CPU_CLOCK=0x00B71B00
+"D:\mdk536\ARM\ARMCC\Bin\ArmAsm" --Via "hzu_sentry_c\startup_stm32f407xx._ia"
+"D:\mdk536\ARM\ARMCC\Bin\ArmCC" --Via "hzu_sentry_c\main.__i"
+"D:\mdk536\ARM\ARMCC\Bin\ArmCC" --Via "hzu_sentry_c\gpio.__i"
+"D:\mdk536\ARM\ARMCC\Bin\ArmCC" --Via "hzu_sentry_c\freertos.__i"
+"D:\mdk536\ARM\ARMCC\Bin\ArmCC" --Via "hzu_sentry_c\can.__i"
+"D:\mdk536\ARM\ARMCC\Bin\ArmCC" --Via "hzu_sentry_c\dma.__i"
+"D:\mdk536\ARM\ARMCC\Bin\ArmCC" --Via "hzu_sentry_c\i2c.__i"
+"D:\mdk536\ARM\ARMCC\Bin\ArmLink" --Via "HZU_sentry_c\HZU_sentry_c.lnp"
+"D:\mdk536\ARM\ARMCC\Bin\fromelf.exe" "HZU_sentry_c\HZU_sentry_c.axf" --i32combined --output "HZU_sentry_c\HZU_sentry_c.hex"

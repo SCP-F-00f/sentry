@@ -1,0 +1,107 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¦ÌVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: . lochaoxive, ., LIC=TIVNB-2Z6KN-45TT5-GX6DQ-94MUS-Y6SY8
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.39.0.0
+Toolchain Path:  D:\MDK539\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.2.0.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\lochaoxive\Desktop\rm\code\HZU_sentry\HZU_sentry_c\MDK-ARM\HZU_sentry_c.uvprojx
+Project File Date:  03/31/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'D:\MDK539\Keil_v5\ARM\ARMCC\Bin'
+Build target 'HZU_sentry_c'
+compiling can.c...
+compiling i2c.c...
+compiling gpio.c...
+compiling main.c...
+compiling dma.c...
+compiling freertos.c...
+compiling spi.c...
+compiling stm32f4xx_hal_msp.c...
+compiling sys.c...
+compiling delay.c...
+compiling usart.c...
+../Core/Src/usart.c(441): warning:  #550-D: variable "i"  was set but never used
+  		static uint32_t i;
+../Core/Src/usart.c: 1 warning, 0 errors
+compiling stm32f4xx_it.c...
+compiling remote_app.c...
+compiling tim.c...
+compiling rule.c...
+compiling pid.c...
+compiling can2_app.c...
+compiling BMI088Middleware.c...
+compiling BMI088driver.c...
+compiling can1_app.c...
+compiling SortAver_Filter.c...
+compiling ist8310driver_middleware.c...
+compiling shoot_task.c...
+compiling start_task.c...
+compiling monitor_task.c...
+compiling connect_task.c...
+compiling gimbal_task.c...
+..\User\Task\gimbal_task.c(52): warning:  #188-D: enumerated type mixed with another type
+  robot_control_mode_e robot_control_mode = 2;
+..\User\Task\gimbal_task.c(79): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  out = 1025 * gimbal_abs(in) - 7.114;
+..\User\Task\gimbal_task.c(419): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+         tt+=0.07;
+..\User\Task\gimbal_task.c(473): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+         tt+=0.07;
+..\User\Task\gimbal_task.c: 4 warnings, 0 errors
+compiling INS_task.c...
+compiling test_task.c...
+compiling adjust_task.c...
+adjust_task.h(8): warning:  #1-D: last line of file ends without a newline
+  #endif
+adjust_task.c(86): warning:  #1-D: last line of file ends without a newline
+  }
+adjust_task.c: 2 warnings, 0 errors
+linking...
+Program Size: Code=56220 RO-data=3296 RW-data=1148 ZI-data=33348  
+FromELF: creating hex file...
+".\HZU_sentry_c\HZU_sentry_c.axf" - 0 Error(s), 7 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM::CMSIS@5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.13.0.pack
+                Keil::STM32F4xx_DFP@2.13.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/_HZU_sentry_c
+  D:/MDK539/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  D:/MDK539/Packs/Keil/STM32F4xx_DFP/2.13.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@5.6.0
+      Include file:  CMSIS/Core/Include/tz_context.h
+Build Time Elapsed:  00:00:17
+</pre>
+</body>
+</html>

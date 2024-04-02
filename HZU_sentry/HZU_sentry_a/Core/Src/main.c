@@ -33,6 +33,7 @@
 #include "chassis_task.h"
 #include "ULTRASONIC_task.h"
 #include "stm32f4xx_hal_rng.h"
+#include "judge.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -55,6 +56,11 @@ volatile long long us_5;
 /* USER CODE BEGIN PV */
 extern uint8_t abuffer;
 volatile uint8_t odometer_sign;
+
+uint8_t usart3_rx_data[usart3_RX_BUFF_SIZE];
+extern UART_HandleTypeDef huart3;
+extern DMA_HandleTypeDef hdma_usart3_rx;
+extern DMA_HandleTypeDef hdma_usart3_tx;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -63,7 +69,15 @@ void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
-
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+		__HAL_UART_CLEAR_IDLEFLAG(&huart3);
+		HAL_UART_DMAStop(&huart3);                                        //??????DMA????
+		uint8_t data_length  = DMA_UsART3_SIZE - __HAL_DMA_GET_COUNTER(&hdma_usart3_tx);   //?????????????????
+		process_judge_message( usart3_rx_data );
+		memset(usart3_rx_data,0,data_length);                                            //????????????
+		HAL_UART_Receive_DMA(&huart3, usart3_rx_data, DMA_UsART3_SIZE);                    //???????DMA???? ???255???????
+}
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 

@@ -1,8 +1,8 @@
 .\hzu_sentry_c\cmsis_os2.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c
-.\hzu_sentry_c\cmsis_os2.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\hzu_sentry_c\cmsis_os2.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\string.h
 .\hzu_sentry_c\cmsis_os2.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
-.\hzu_sentry_c\cmsis_os2.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\hzu_sentry_c\cmsis_os2.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\hzu_sentry_c\cmsis_os2.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stdint.h
+.\hzu_sentry_c\cmsis_os2.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stddef.h
 .\hzu_sentry_c\cmsis_os2.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 .\hzu_sentry_c\cmsis_os2.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 .\hzu_sentry_c\cmsis_os2.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h

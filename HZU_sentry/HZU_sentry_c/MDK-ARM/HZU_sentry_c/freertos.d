@@ -1,7 +1,7 @@
 .\hzu_sentry_c\freertos.o: ../Core/Src/freertos.c
 .\hzu_sentry_c\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-.\hzu_sentry_c\freertos.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\hzu_sentry_c\freertos.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\hzu_sentry_c\freertos.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stddef.h
+.\hzu_sentry_c\freertos.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stdint.h
 .\hzu_sentry_c\freertos.o: ../Core/Inc/FreeRTOSConfig.h
 .\hzu_sentry_c\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 .\hzu_sentry_c\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
@@ -46,7 +46,7 @@
 .\hzu_sentry_c\freertos.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 .\hzu_sentry_c\freertos.o: ../Core/Inc/usart.h
 .\hzu_sentry_c\freertos.o: ../Core/Inc/main.h
-.\hzu_sentry_c\freertos.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\hzu_sentry_c\freertos.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\string.h
 .\hzu_sentry_c\freertos.o: ../User/App/remote_app.h
 .\hzu_sentry_c\freertos.o: ../Core/Inc/struct_typedef.h
 .\hzu_sentry_c\freertos.o: ../Core/Inc/dma.h

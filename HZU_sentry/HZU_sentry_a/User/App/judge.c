@@ -270,7 +270,6 @@ void get_robot_status(uint8_t *ReadFromUsart, robot_status_t *robot_status)     
 	robot_status->power_management_gimbal_output = ReadFromUsart[19] & 0x01 ;
 	robot_status->power_management_chassis_output = ReadFromUsart[19] & 0x02;
 	robot_status->power_management_shooter_output = ReadFromUsart[19] & 0x04;
-
 }
 void get_power_heart(uint8_t *ReadFromUsart, power_heat_data_t *power_heat)         //实时功率热量数据
 {
@@ -295,7 +294,6 @@ void get_robot_hurt(uint8_t *ReadFromUsart, hurt_data_t *hurt_data)   //伤害�
 {
 	hurt_data->armor_id = ReadFromUsart[7] & 0x0f;
 	hurt_data->HP_deduction_reason = (ReadFromUsart[7] & 0xf0) >>4 ;             //只能检测到掉线扣血、装甲打击扣血   后面得重新刷固件      *hyj
-	
 }
 void get_shoot_infor(uint8_t *ReadFromUsart, shoot_data_t *shoot_data)              //实时射击信息 
 {

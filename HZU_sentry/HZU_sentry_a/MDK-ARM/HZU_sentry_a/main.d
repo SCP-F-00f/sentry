@@ -68,3 +68,4 @@ hzu_sentry_a\main.o: ../User/Task/ULTRASONIC_task.h
 hzu_sentry_a\main.o: ../User/App/remote_app.h
 hzu_sentry_a\main.o: ../User/App/dwa.h
 hzu_sentry_a\main.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rng.h
+hzu_sentry_a\main.o: ../User/App/judge.h

@@ -3,9 +3,9 @@
 .\hzu_sentry_c\user_lib.o: ../Core/Inc/struct_typedef.h
 .\hzu_sentry_c\user_lib.o: ../components/algorithm/Include/arm_math.h
 .\hzu_sentry_c\user_lib.o: ../Drivers/CMSIS/Include/core_cm4.h
-.\hzu_sentry_c\user_lib.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\hzu_sentry_c\user_lib.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stdint.h
 .\hzu_sentry_c\user_lib.o: ../Drivers/CMSIS/Include/cmsis_version.h
 .\hzu_sentry_c\user_lib.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 .\hzu_sentry_c\user_lib.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
-.\hzu_sentry_c\user_lib.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-.\hzu_sentry_c\user_lib.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\hzu_sentry_c\user_lib.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\string.h
+.\hzu_sentry_c\user_lib.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\math.h

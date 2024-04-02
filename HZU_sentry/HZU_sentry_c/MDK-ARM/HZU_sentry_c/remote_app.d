@@ -1,7 +1,7 @@
 .\hzu_sentry_c\remote_app.o: ..\User\App\remote_app.c
 .\hzu_sentry_c\remote_app.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-.\hzu_sentry_c\remote_app.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\hzu_sentry_c\remote_app.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\hzu_sentry_c\remote_app.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stddef.h
+.\hzu_sentry_c\remote_app.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stdint.h
 .\hzu_sentry_c\remote_app.o: ../Core/Inc/FreeRTOSConfig.h
 .\hzu_sentry_c\remote_app.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 .\hzu_sentry_c\remote_app.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
@@ -65,4 +65,4 @@
 .\hzu_sentry_c\remote_app.o: ../components/devices/oled/oled.h
 .\hzu_sentry_c\remote_app.o: ../User/App/can2_app.h
 .\hzu_sentry_c\remote_app.o: ../Drivers/system/delay/delay.h
-.\hzu_sentry_c\remote_app.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\hzu_sentry_c\remote_app.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\string.h

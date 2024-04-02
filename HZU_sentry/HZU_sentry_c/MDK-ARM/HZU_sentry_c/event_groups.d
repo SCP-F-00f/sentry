@@ -1,8 +1,8 @@
 .\hzu_sentry_c\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c
-.\hzu_sentry_c\event_groups.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\hzu_sentry_c\event_groups.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stdlib.h
 .\hzu_sentry_c\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-.\hzu_sentry_c\event_groups.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\hzu_sentry_c\event_groups.o: D:\MDK539\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\hzu_sentry_c\event_groups.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stddef.h
+.\hzu_sentry_c\event_groups.o: D:\KEIL\ARM\ARM_Compiler\Bin\..\include\stdint.h
 .\hzu_sentry_c\event_groups.o: ../Core/Inc/FreeRTOSConfig.h
 .\hzu_sentry_c\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 .\hzu_sentry_c\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

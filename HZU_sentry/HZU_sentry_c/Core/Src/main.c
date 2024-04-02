@@ -52,6 +52,7 @@
 extern uint8_t abuffer;
 float value=0;
 uint8 getflag=0;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -108,13 +109,14 @@ int main(void)
   MX_TIM10_Init();
   MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
-		HAL_UART_Receive_IT(&huart6,(uint8_t*)&abuffer,1);
+	HAL_UART_Receive_IT(&huart6,(uint8_t*)&abuffer,1);
   led_configuration();
   freertos_run_tim3_configuration();
   usart_Receive_DMA();
   CAN_APP_INIT();
   oled_init(); 
-  
+  HAL_TIM_Base_Start(&htim1);
+  HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
   /* USER CODE END 2 */
 
   /* Init scheduler */

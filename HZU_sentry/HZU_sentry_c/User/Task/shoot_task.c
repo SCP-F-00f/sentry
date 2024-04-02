@@ -565,6 +565,8 @@ void shoot_magazine_control(shoot_control_data_t *shoot)
   * @retval			
   * @note           
   */
+int a = 3000;
+
 void shoot_task(void *argument)
 {
 	
@@ -583,7 +585,7 @@ void shoot_task(void *argument)
 		shoot_set_and_fdb_update(&shoot_control_data);
 		shoot_cascade_pid_calculate(&shoot_pid, &shoot_control_data);
 		shoot_control_loop(&shoot_control_data);                    
-		
+			__HAL_TIM_SetCompare(&htim1,TIM_CHANNEL_1,a);//4150//2200
 		vTaskDelayUntil(&current_time, SHOOT_TASK_TIME_1MS);        //1ms“ª¥Œ       *hyj
 	}	
 }

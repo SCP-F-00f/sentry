@@ -146,10 +146,10 @@ void send_shoot_17mm_data(void)
     can2_tx_data[1] = (uint8_t)(robot_status.shooter_barrel_cooling_value);
     can2_tx_data[2] = (uint8_t)(robot_status.shooter_barrel_heat_limit>>8);
     can2_tx_data[3] = (uint8_t)(robot_status.shooter_barrel_heat_limit);
-	can2_tx_data[4] = (uint8_t)(30>>8);
-    can2_tx_data[5] = (uint8_t)(30);
-    can2_tx_data[6] = (uint8_t)(power_heat.shooter_17mm_1_barrel_heat>>8);
-    can2_tx_data[7] = (uint8_t)(power_heat.shooter_17mm_1_barrel_heat);
+		can2_tx_data[4] = (uint8_t)(power_heat.shooter_17mm_1_barrel_heat>>8);
+    can2_tx_data[5] = (uint8_t)(power_heat.shooter_17mm_1_barrel_heat);
+    can2_tx_data[6] = (uint8_t)(power_heat.shooter_17mm_2_barrel_heat>>8);
+    can2_tx_data[7] = (uint8_t)(power_heat.shooter_17mm_2_barrel_heat);
 	HAL_CAN_AddTxMessage(&hcan2, &can2_tx_header, can2_tx_data, (uint32_t *) CAN_TX_MAILBOX0);
 }
 void send_shoot_judge_data(void)  

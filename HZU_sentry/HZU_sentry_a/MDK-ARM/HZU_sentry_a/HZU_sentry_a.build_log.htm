@@ -27,11 +27,20 @@ Project File Date:  04/02/2024
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\KEIL\ARM\ARM_Compiler\Bin'
 Build target 'HZU_sentry_a'
-compiling usart.c...
+compiling can2_app.c...
+../User/App/remote_app.h(18): warning:  #47-D: incompatible redefinition of macro "KEY_PRESSED_OFFSET_W"  (declared at line 10 of "../User/Task/chassis_task.h")
+  #define KEY_PRESSED_OFFSET_W            ((uint16_t)1 << 0)
+../User/App/remote_app.h(19): warning:  #47-D: incompatible redefinition of macro "KEY_PRESSED_OFFSET_S"  (declared at line 11 of "../User/Task/chassis_task.h")
+  #define KEY_PRESSED_OFFSET_S            ((uint16_t)1 << 1)
+../User/App/remote_app.h(20): warning:  #47-D: incompatible redefinition of macro "KEY_PRESSED_OFFSET_A"  (declared at line 12 of "../User/Task/chassis_task.h")
+  #define KEY_PRESSED_OFFSET_A            ((uint16_t)1 << 2)
+../User/App/remote_app.h(21): warning:  #47-D: incompatible redefinition of macro "KEY_PRESSED_OFFSET_D"  (declared at line 13 of "../User/Task/chassis_task.h")
+  #define KEY_PRESSED_OFFSET_D            ((uint16_t)1 << 3)
+..\User\App\can2_app.c: 4 warnings, 0 errors
 linking...
-Program Size: Code=55076 RO-data=2436 RW-data=868 ZI-data=22940  
+Program Size: Code=55080 RO-data=2432 RW-data=868 ZI-data=22940  
 FromELF: creating hex file...
-"HZU_sentry_a\HZU_sentry_a.axf" - 0 Error(s), 0 Warning(s).
+"HZU_sentry_a\HZU_sentry_a.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 

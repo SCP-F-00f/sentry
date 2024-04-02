@@ -128,7 +128,7 @@ int main(void)
 	HAL_UART_Receive_IT(&huart6,(uint8_t*)&abuffer,1);
 	HAL_UART_Receive_DMA(&huart3, usart3_rx_data, DMA_UsART3_SIZE);
 	HAL_TIM_Base_Init(&htim4);
- HAL_TIM_Base_Start_IT(&htim4); 
+  HAL_TIM_Base_Start_IT(&htim4); 
   /* USER CODE END 2 */
 
   /* Init scheduler */

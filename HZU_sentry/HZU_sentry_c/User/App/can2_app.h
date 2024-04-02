@@ -17,7 +17,8 @@ typedef struct
 	uint16_t shooter_id1_17mm_speed_limit;      //速度上限
 	uint8_t mains_power_shooter_output ;        //电源是否输出给发射机构
 	float bullet_speed;                         //当前射速
-	uint16_t shooter_id1_17mm_cooling_heat;     //17mm当前枪口热量
+	uint16_t shooter_17mm_1_barrel_heat;     //17mm当前枪口热量
+	uint16_t shooter_17mm_2_barrel_heat;		//2号枪口
 	uint8_t hurt_type : 4;                      //0x2 超射速扣血；0x3 超枪口热量扣血；
 
 } ext_Judge_data_t;                     //实时裁判信息   *hyj

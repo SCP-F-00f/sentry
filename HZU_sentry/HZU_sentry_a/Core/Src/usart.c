@@ -245,7 +245,7 @@ void USAR_UART_IDLECallback(UART_HandleTypeDef *huart3)
 //		__HAL_UART_CLEAR_IDLEFLAG(huart3);
 //		HAL_UART_DMAStop(huart3);                                        //停止本次DMA传输
 //		uint8_t data_length  = DMA_UsART3_SIZE - __HAL_DMA_GET_COUNTER(&hdma_usart3_tx);   //计算接收到的数据长度
-//		process_judge_message( usart3_rx_data );
+//		process_judge_message(usart3_rx_data );
 //		memset(usart3_rx_data,0,data_length);                                            //清零接收缓冲区
 //		HAL_UART_Receive_DMA(huart3, usart3_rx_data, DMA_UsART3_SIZE);                    //重启开始DMA传输 每次255字节数据
 //	}

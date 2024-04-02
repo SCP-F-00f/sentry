@@ -17,17 +17,23 @@ Library Manager: ArmAr.exe V5.06 update 7 (build 960)
 Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
 CPU DLL:         SARMCM3.DLL V5.38.0.0
 Dialog DLL:      DCM.DLL V1.17.5.0
-Target DLL:      UL2CM3.DLL V1.164.8.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.6.0_KEIL
 Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 C:\Users\F\Documents\sentry\sentry\HZU_sentry\HZU_sentry_c\MDK-ARM\HZU_sentry_c.uvprojx
-Project File Date:  04/02/2024
+Project File Date:  04/03/2024
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\KEIL\ARM\ARM_Compiler\Bin'
 Build target 'HZU_sentry_c'
-".\HZU_sentry_c\HZU_sentry_c.axf" - 0 Error(s), 0 Warning(s).
+compiling rule.c...
+..\User\App\rule.c(48): error:  #136: struct "<unnamed>"  has no field "shooter_id1_17mm_cooling_heat"
+      if (Judge_data.shooter_id1_17mm_cooling_limit > Judge_data.shooter_id1_17mm_cooling_heat )
+..\User\App\rule.c(51): error:  #136: struct "<unnamed>"  has no field "shooter_id1_17mm_cooling_heat"
+  		shoot_mag.residual_heat = Judge_data.shooter_id1_17mm_cooling_limit - Judge_data.shooter_id1_17mm_cooling_heat;
+..\User\App\rule.c: 0 warnings, 2 errors
+".\HZU_sentry_c\HZU_sentry_c.axf" - 2 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -51,7 +57,8 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.6.0
       Include file:  CMSIS/Core/Include/tz_context.h
-Build Time Elapsed:  00:00:01
+Target not created.
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

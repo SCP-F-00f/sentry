@@ -36,6 +36,9 @@
 extern char Usart_Receive[10]; 
 extern unsigned char Usart_Cnt;
 uint8_t abuffer;
+char Receive[20];
+volatile char ffflag = 0;
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -408,9 +411,6 @@ void DMA2_Stream7_IRQHandler(void)
 /**
   * @brief This function handles USART6 global interrupt.
   */
-
-char Receive[20];
-volatile char ffflag = 0;
 void USART6_IRQHandler(void)
 {
   /* USER CODE BEGIN USART6_IRQn 0 */

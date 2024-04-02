@@ -186,8 +186,8 @@ void shoot_17mm_mag(ext_Judge_data_t *Judge_data, uint8_t aData[])
 {
 	Judge_data->shooter_id1_17mm_cooling_rate   = ((int16_t)aData[0] << 8) | (int16_t)aData[1];
 	Judge_data->shooter_id1_17mm_cooling_limit  = ((int16_t)aData[2] << 8) | (int16_t)aData[3];
-	Judge_data->shooter_id1_17mm_speed_limit    = ((int16_t)aData[4] << 8) | (int16_t)aData[5];
-	Judge_data->shooter_id1_17mm_cooling_heat   = ((int16_t)aData[6] << 8) | (int16_t)aData[7];
+	Judge_data->shooter_17mm_1_barrel_heat    = ((int16_t)aData[4] << 8) | (int16_t)aData[5];
+	Judge_data->shooter_17mm_2_barrel_heat   = ((int16_t)aData[6] << 8) | (int16_t)aData[7];
 }
 void shoot_judge_process(ext_Judge_data_t *Judge_data, uint8_t aData[])
 {
